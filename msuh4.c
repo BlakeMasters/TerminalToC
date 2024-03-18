@@ -21,15 +21,15 @@ void sigint_handler(int sig);
 volatile sig_atomic_t sigint_received = False;
 int batch = False;
 
-/** Assuming readLongString is implemented as described **/
+
 
 void sigint_handler(int sig) {
     sigint_received = True;
-    /** Do not call process_input(stdin) here directly to avoid recursion **/
+    
 }
 
 void handle_cd_command(char **argv, int argc) {
-    /** stage->argc //stage->argv **/
+
     char *dir = argc > 1 ? argv[1] : getenv("HOME");
     if (!dir) {
         struct passwd *pw = getpwuid(getuid());
